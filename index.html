@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explora Riviera Maya</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="encabezado">
+      <div>
+        <h1>Explora Riviera Maya</h1>
+        <p>Experiencias naturales y culturales</p>
+      </div>
+    </header>
+    <main class="contenedor">
+      <section class="panel">
+        <div>
+          <h2>Experiencias disponibles</h2>
+          <p id="contador">0 experiencias encontradas</p>
+        </div>
+        <div class="buscador-seccion" role="search">
+          <input
+            type="text"
+            id="buscador"
+            placeholder="Buscar experiencias..."
+            aria-label="Buscar experiencias"
+            class="buscador-input"
+          />
+          <label>Precio máximo:
+            <input type="number" id="precioMaximo" min="0" placeholder="Sin límite" />
+          </label>
+          <button id="btnOrdenar" class="btn-ordenar">Ordenar por precio</button>
+        </div>
+        <div class="filtros" role="group" aria-label="Filtros del catálogo">
+          <button class="activo" data-categoria="todas" aria-pressed="true">Todas</button>
+          <button data-categoria="naturaleza" aria-pressed="false">Naturaleza</button>
+          <button data-categoria="cultura" aria-pressed="false">Cultura</button>
+          <button data-categoria="aventura" aria-pressed="false">Aventura</button>
+          <button data-categoria="gastronomia" aria-pressed="false">Gastronomía</button>
+          <button data-categoria="bienestar" aria-pressed="false">Bienestar</button>
+        </div>
+      </section>
+      <p id="mensaje" class="mensaje" role="status" aria-live="polite"></p>
+      <section id="catalogo" class="catalogo"></section>
+      <section class="resumen">
+        <h2>Mi reservación</h2>
+        <div id="listaReservas"><p>No hay experiencias seleccionadas.</p></div>
+        <p>Personas reservadas: <span id="totalPersonas">0</span></p>
+        <p class="total">Total: <span id="total">$0 MXN</span></p>
+        <button id="btnVaciar" class="btn-vaciar">Vaciar reservación</button>
+      </section>
+    </main>
+    <footer><p>Proyecto académico de desarrollo front-end</p></footer>
+  </body>
+</html>
